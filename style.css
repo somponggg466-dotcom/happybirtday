@@ -1,0 +1,98 @@
+body {
+    font-family: 'Sukhumvit Set', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* ลองใช้ฟอนต์ที่ดูอ่อนโยน */
+    background: linear-gradient(135deg, #ff9a8d 0%, #ff6a88 100%); /* พื้นหลังสีชมพูไล่ระดับ */
+    color: #333; /* สีข้อความหลัก */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #e91e63; /* สีแดงอมชมพูสดใส */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate; /* เพิ่มแอนิเมชันเล็กน้อย */
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.main-message {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+#surpriseButton {
+    background-color: #fdd835; /* สีเหลืองทอง */
+    color: #333;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#surpriseButton:hover {
+    background-color: #ffeb3b;
+    transform: scale(1.05);
+}
+
+#surpriseMessage {
+    background-color: #fffde7; /* พื้นหลังอ่อน ๆ สำหรับข้อความพิเศษ */
+    border: 2px dashed #ffb74d; /* กรอบเส้นประ */
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    /* แอนิเมชันเพื่อแสดงข้อความ */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#surpriseMessage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none; /* ซ่อนตอนเริ่มต้น */
+}
+
+.signature {
+    margin-top: 15px;
+    font-style: italic;
+    color: #888;
+}
+
+/* ปรับสำหรับมือถือ */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .container {
+        padding: 20px;
+    }
+}
